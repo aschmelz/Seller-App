@@ -1,0 +1,15 @@
+<div ng-init="loadItem()">
+  <div class="container jumbotron">
+    <h1 class="text-center"> About the Item </h1>
+    <p> Item: {{ title }} </p>
+    <p> Seller: {{ seller }} </p>
+    <p> Address: {{ address }} </p>
+    <p> Phone: {{ phone.number }} ({{ phone.location }})  </p>
+    <p> Email: {{ email }} </p>
+    <p> Description: {{ description }} </p>
+    <p> Seller's City: {{ city }} </p>
+    <p> Price: {{ price | currency }} </p>
+    <a href="#!/" class="btn btn-success mt-2" type="button">Return Home</a>
+    <a href="#!/displayItems" class="btn btn-info mt-2" type="button">For Sale</a>
+  </div>
+</div>

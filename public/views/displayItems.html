@@ -1,0 +1,30 @@
+<div class="container jumbotron" ng-init="loadItems()">
+  <h2> Items for Sale </h2>
+  <form class="form-inline">
+    <input ng-model="searchTerm" type="text" class="form-control mt-2 mb-2" placeholder="Item Search"/>
+    <button ng-click="searchItems()" type="button" class="btn btn-primary mt-2 mb-2 ml-1">Search</button>
+  </form>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Item</th>
+        <th scope="col">Description</th>
+        <th scope="col">Price</th>
+        <th scope="col">Edit/Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="col" ng-repeat="item in items">
+        <td><a ng-href="#!/displayInfo/{{ item._id }}"> {{ item.itemName }} </td>
+        <td> {{ item.itemDescription }} </td>
+        <td> {{ item.price | currency }} </td>
+        <td>
+          <a ng-href="#!/edit/{{ item._id }}" class="btn btn-warning mt-1 btn-sm" type="button">Edit</a>
+          <button type="button" ng-click="deleteItems(item._id)" class="btn btn-danger mt-1 mr-1 btn-sm" type="button">Delete</button>
+        </td>
+      </tr> 
+    </tbody>
+  </table>
+  <a href="#!/" class="btn btn-success mt-2" type="button">Return Home</a>
+  <a href="#!/create" type="button" class="btn btn-info mt-2">Post Item</a>
+</div>
